@@ -4,10 +4,11 @@ import pandas as pd
 import numpy as np
 import joblib
 import matplotlib.pyplot as plt
+import streamlit as st
+import tensorflow as tf
 
+model = tf.keras.models.load_model("lstm_model_11-06-2026-20-46-04.keras")
 st.title("Rossmann Sales Prediction Dashboard")
-model = joblib.load("model.pkl")
-model = joblib.load("Notebook/model.pkl")
 
 uploaded_file = st.file_uploader(
     "Upload CSV file (must contain Sales column)",
