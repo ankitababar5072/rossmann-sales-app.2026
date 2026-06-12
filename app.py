@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 st.title("Rossmann Sales Prediction Dashboard")
 model = joblib.load("model.pkl")
+model = joblib.load("Notebook/model.pkl")
 
 uploaded_file = st.file_uploader(
     "Upload CSV file (must contain Sales column)",
