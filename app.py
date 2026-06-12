@@ -1,15 +1,14 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
 import matplotlib.pyplot as plt
-import streamlit as st
 import tensorflow as tf
 
+# Load model
 model = tf.keras.models.load_model(
     "lstm_model_11-06-2026-20-46-04.keras"
 )
+
 st.title("Rossmann Sales Prediction Dashboard")
 
 uploaded_file = st.file_uploader(
@@ -20,7 +19,6 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None:
 
     df = pd.read_csv(uploaded_file)
-
     st.write("Uploaded Data")
     st.dataframe(df.head())
 
@@ -38,7 +36,6 @@ if uploaded_file is not None:
                 sequence = sequence.reshape((1, 7, 1))
 
                 pred = model.predict(sequence, verbose=0)
-
                 predictions.append(pred[0][0])
 
             result = pd.DataFrame({
@@ -50,10 +47,8 @@ if uploaded_file is not None:
             st.dataframe(result)
 
             fig, ax = plt.subplots()
-
             ax.plot(result["Actual Sales"], label="Actual")
             ax.plot(result["Predicted Sales"], label="Predicted")
-
             ax.legend()
 
             st.pyplot(fig)
