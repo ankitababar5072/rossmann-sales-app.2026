@@ -5,9 +5,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 
 # Load model
-model = tf.keras.models.load_model(
-    "lstm_model_11-06-2026-20-46-04.keras"
-)
+model = tf.keras.models.load_model("lstm_model_11-06-2026-20-46-04.keras")
 
 st.title("Rossmann Sales Prediction Dashboard")
 
