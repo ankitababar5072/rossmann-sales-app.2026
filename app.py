@@ -2,10 +2,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import tensorflow as tf
 import matplotlib.pyplot as plt
 
 # Load LSTM Model
-model = tf.keras.models.load_model("Notebook/lstm_model_11-06-2026-06-06-59.keras")
+model = tf.keras.models.load_model("Notebook/lstm_model_11-06-2026-06-06-04.keras")
 
 st.title("Rossmann Sales Prediction Dashboard")
 
