@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import tensorflow as tf
 
-model = tf.keras.models.load_model("lstm_model_11-06-2026-20-46-04.keras")
+model = tf.keras.models.load_model(
+    "lstm_model_11-06-2026-20-46-04.keras"
+)
 st.title("Rossmann Sales Prediction Dashboard")
 
 uploaded_file = st.file_uploader(
